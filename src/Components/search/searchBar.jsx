@@ -9,19 +9,26 @@ const SearchBar = () => {
    };
    
 
-   const apiUrl = 'http://localhost:3001/processRequest'; // Proxy server endpoint
+   const apiUrl = '/api/v1/auth/signup'; // Proxy server endpoint
 
    const handleSearch = () => {
      if (searchInput.length > 0) {
-       const requestBody = {
-         request: searchInput,
-       };
-   
-       // Make the API request through the proxy server
+         const requestBody = {
+             "firstName": "John",
+             "lastName": "Doe",
+             "email": "johndoe@example.com",
+             "password": "secretpassword"
+         };
+
+
+         // Make the API request through the proxy server
        fetch(apiUrl, {
          method: 'POST',
          headers: {
            'Content-Type': 'application/json',
+             //cross-origin resource sharing
+              'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
          },
          body: JSON.stringify(requestBody),
        })
