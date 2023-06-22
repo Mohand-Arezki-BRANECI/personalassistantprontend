@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import '../signup/signup.css';
-import SignUp from '../signup/signup';
 
 function SignIn() {
 
@@ -37,11 +36,7 @@ function SignIn() {
                 </div>
             </div>
             <div class="footer">
-                <button onClick={()=>handleSubmit()} type="submit" class="btn">Register</button>
-                
-
-
-                
+                <button onClick={()=>handleSubmit()} type="submit" class="btn">Register</button>                
             </div>
 
         </div>

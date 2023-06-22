@@ -4,16 +4,16 @@ import SignIn from './Components/signin/singin';
 import Result from './Components/result/result';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import {useState} from 'react';
 import SearchBar from './Components/search/searchBar';
+import Main from './Components/main/main';
 function App() {
 
   return (
 <Routes>
       <Route path="/" element={<SignUp />}></Route>
-      <Route path="main" element={<SearchBar />}></Route>
       <Route path="signin" element={<SignIn />}></Route>
-    </Routes>
+      <Route path="main" element={<Main />}></Route>
+</Routes>
     
     
   );
@@ -22,15 +22,3 @@ function App() {
 export default App;
 
 
-/*
-    <div>
-      <div className="App">
-    <SearchBar/>
-    {showComponent ? <SignUp /> : <SignIn />}
-    {showComponent ? (
-      <button onClick={toggleComponent}>Have already an account? SignIn!</button>
-    ) : (
-      <button onClick={toggleComponent}>Dont have an account yet? SignUp!</button>
-    )}
-  </div>
-  */
